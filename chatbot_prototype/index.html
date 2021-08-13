@@ -181,10 +181,9 @@
 			updateScroll();
 
 			$('#atddigitando').removeClass("collapse");
-			urlsend = 'http://1ebd0f5ffbc7.ngrok.io/';
+			urlsend = 'http://b6da83e93838.ngrok.io/';
 			$.ajax({
 				type: "POST",
-				crossDomain: true,
 				url: urlsend,
 				data: {context: context, sentence: message},
 				success: function (response){
@@ -243,7 +242,6 @@
 		});
 
 		$(document).ready(function() {
-			jQuery.support.cors = true;
 			date = new Date();
 			strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
 			strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
