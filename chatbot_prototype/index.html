@@ -236,11 +236,6 @@
 			if(e.which == 13){ send(); }
 		});
 
-		window.addEventListener("load", function() {
-			var bannerNode = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
-			bannerNode.parentNode.removeChild(bannerNode);
-		});
-
 		$(document).ready(function() {
 			date = new Date();
 			strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
