@@ -181,10 +181,10 @@
 			updateScroll();
 
 			$('#atddigitando').removeClass("collapse");
-			urlsend = 'https://1b7b8a6af14f.ngrok.io';
+			urlsend = 'http://1b7b8a6af14f.ngrok.io/';
 			$.ajax({
 				type: "POST",
-				url: urlsend,
+				url: 'https://'+urlsend.replace('http://', '').replace('/', ''),
 				data: {context: context, sentence: message},
 				success: function (response){
 					response = JSON.parse(response);
