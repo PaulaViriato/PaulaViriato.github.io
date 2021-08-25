@@ -100,9 +100,9 @@
 		botbox = '<div class="l60d2q6s d1544ag0 sj5x9vvc tw6a2znq l9j0dhe7 ni8dbmo4 stjgntxs qlfml3jp inkptoze jk6sbkaj qmr60zad jm1wdb64 qv66sw1b ljqsnud1 g6srhlxm odn2s2vf chatbox botbox" style="width:75%;margin-top:5px;"><div dir="auto" class="oo9gr5id"><span class="spanmessage">';
 		boxhour_begin = '<br></span><div class="boxhour"><span class="spanhour">';
 		boxhour_end = '</span></div></div></div>';
-		server = "http://4f7a-35-229-142-247.ngrok.io/";
-		namebot = ""
-		genderbot = ""
+		server = "http://44fe-34-80-186-132.ngrok.io/";
+		namebot = "";
+		genderbot = "";
 		context = "";
 
 		function modifyPage (){
@@ -239,14 +239,6 @@
 		});
 
 		$(document).ready(function() {
-			date = new Date();
-			strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
-			strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
-			$('#hour0').html(strdate);
-			$('#dialogbuttom').click();
-			modifyPage();
-			$('#closepanel').click();
-
 			$.ajax({
 				type: "POST",
 				url: 'https://'+server.replace('http://', '').replace('/', ''),
@@ -260,16 +252,24 @@
 						namebot = "Bot";
 						genderbot = 0;
 					}
-					$('.namebot').html(""+namebot);
+					$('.botname').html(""+namebot);
 				},
 				complete: function(xhr, textStatus) {
 					if (parseInt(xhr.status) != 200){
 						namebot = "Bot";
 						genderbot = 0;
-						$('.namebot').html(""+namebot);
+						$('.botname').html(""+namebot);
 					}
 				}
 			});
+
+			date = new Date();
+			strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
+			strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
+			$('#hour0').html(strdate);
+			$('#dialogbuttom').click();
+			modifyPage();
+			$('#closepanel').click();
 		});
 	</script>
 </body>
