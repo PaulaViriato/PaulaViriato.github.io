@@ -253,12 +253,16 @@
 						genderbot = 0;
 					}
 					$('.botname').html(""+namebot);
+					modifyPage();
+					updateScroll();
 				},
 				complete: function(xhr, textStatus) {
 					if (parseInt(xhr.status) != 200){
 						namebot = "Bot";
 						genderbot = 0;
 						$('.botname').html(""+namebot);
+						modifyPage();
+						updateScroll();
 					}
 				}
 			});
