@@ -272,6 +272,7 @@
 		function start_dialog (){
 			code = document.getElementById("insere-codigo").value;
 			server = "http://"+code+".ngrok.io";
+			document.getElementById("insere-codigo").value = "";
 
 			get_attendant();
 			date = new Date();
