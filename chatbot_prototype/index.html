@@ -60,10 +60,10 @@
 
 	<div id="wrapper">
 		<div class="vertical-align-wrap">
-			<div class="input-group" style="width:25%;margin-left:10px;padding-top:15px;padding-bottom:0px;padding-left:1%;border-radius:0px;box-shadow:0px 0px 0px 0 rgb(0 0 0)">
+			<!--<div class="input-group" style="width:25%;margin-left:10px;padding-top:15px;padding-bottom:0px;padding-left:1%;border-radius:0px;box-shadow:0px 0px 0px 0 rgb(0 0 0)">
 				<input id="insere-codigo" class="form-control" type="text" style="margin-left:0px;height:25px;width:75%;font-size:14px;color:black;margin-top:1px;font-size:12px;" placeholder="Código"/>
 				<button class="btn" onclick="start_dialog()" style="width:22%;margin-left:3%;margin-bottom:0px;padding:0px;height:24px;margin-top:2px;text-align:center;font-size:12px;">Registrar</span></button>
-			</div>
+			</div>-->
 			<div class="vertical-align-middle" style="margin:0px;">
 				<button id="dialogbuttom" style="position:fixed;bottom:2%;right:1%;border:0px;background-color:transparent;" onclick="uncollapse()"><img style="height:100px;" src="assets/img/button.png" alt="Klorofil Logo" class="img-responsive logo"></button>
 				<div class="content" id="dialogpanel" style="bottom:1%;right:1%;width:400px;height:550px;overflow:auto;position:fixed;padding:5px;">
@@ -106,7 +106,7 @@
 		botbox = '<div class="l60d2q6s d1544ag0 sj5x9vvc tw6a2znq l9j0dhe7 ni8dbmo4 stjgntxs qlfml3jp inkptoze jk6sbkaj qmr60zad jm1wdb64 qv66sw1b ljqsnud1 g6srhlxm odn2s2vf chatbox botbox" style="width:75%;margin-top:5px;"><div dir="auto" class="oo9gr5id"><span class="spanmessage">';
 		boxhour_begin = '<br></span><div class="boxhour"><span class="spanhour">';
 		boxhour_end = '</span></div></div></div>';
-		server = "";
+		server = "https://fresh-penguin-28.loca.lt/";
 		namebot = "";
 		genderbot = "";
 		context = "";
@@ -192,7 +192,7 @@
 			$('#atddigitando').removeClass("collapse");
 			$.ajax({
 				type: "POST",
-				url: 'https://'+server.replace('http://', '').replace('/', ''),
+				url: server,
 				data: {request: 1, context: context, sentence: message},
 				success: function (response){
 					response = JSON.parse(response);
@@ -242,7 +242,7 @@
 		function get_attendant (){
 			$.ajax({
 				type: "POST",
-				url: 'https://'+server.replace('http://', '').replace('/', ''),
+				url: server,
 				data: {request: 0},
 				success: function (response){
 					response = JSON.parse(response);
@@ -269,20 +269,20 @@
 			});
 		}
 
-		function start_dialog (){
-			code = document.getElementById("insere-codigo").value;
-			server = "http://"+code+".ngrok.io";
-			document.getElementById("insere-codigo").value = "";
+		//function start_dialog (){
+		//	code = document.getElementById("insere-codigo").value;
+		//	server = code;
+		//	document.getElementById("insere-codigo").value = "";
 
-			get_attendant();
-			date = new Date();
-			strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
-			strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
-			$('#hour0').html(strdate);
-			$('#dialogbuttom').click();
-			modifyPage();
-			$('#closepanel').click();
-		}
+		//	get_attendant();
+		//	date = new Date();
+		//	strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
+		//	strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
+		//	$('#hour0').html(strdate);
+		//	$('#dialogbuttom').click();
+		//	modifyPage();
+		//	$('#closepanel').click();
+		//}
 
 		setInterval('setDigitando()', 750);
 		$(document).keypress(function(e){
