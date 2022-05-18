@@ -1,0 +1,112 @@
+{
+	"start": {
+		"default": {
+			"action": "Olá! Este chatbot foi projetado para disponibilizar as datas das tarefas da disciplina MC750A - Construção de Interfaces Homem-Computador, para o primeiro semestre de 2022. Qual tipo de tarefa você deseja saber as datas?<br><b>(1)</b> Tarefas<br><b>(2)</b> Projeto<br><b>(3)</b> Encerrar",
+			"new_state": "0"
+		}
+	},
+	"end": {
+		"1": {
+			"action": "Qual tipo de tarefa você deseja saber as datas?<br><b>(1)</b> Tarefas<br><b>(2)</b> Projeto<br><b>(3)</b> Encerrar",
+			"new_state": "0"
+		},
+		"2": {
+			"action": "Muito obrigada por utilizar nosso chatbot! Qualquer nova dúvida basta chamar novamente! Até mais!",
+			"new_state": "start"
+		},
+		"default": {
+			"action": "Não entendi! Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		}
+	},
+	"0": {
+		"1": {
+			"action": "Vamos falar sobre as tarefas! Qual tarefa deseja saber as datas?<br><b>(1)</b> Tarefa 1: Design centrado no usuário e design da interação<br><b>(2)</b> Tarefa 2: Acessibilidade<br><b>(3)</b> Tarefa 3: Personas e Jornada do Usuário<br><b>(4)</b> Tarefa 4: Storyboarding<br><b>(5)</b> Tarefa 5: Fatores Humanos - Percepção<br><b>(6)</b> Encerrar",
+			"new_state": "1"
+		},
+		"2": {
+			"action": "Vamos falar sobre o projeto! Qual fase deseja saber as datas?<br><b>(1)</b> Proposição de Temas<br><b>(2)</b> Seleção Problema - Votação<br><b>(3)</b> Formação Grupos<br><b>(4)</b> Fase 1 - Clarificação do Problema de Design<br><b>(5)</b> Fase 2 - Prototipação de Baixa<br><b>(6)</b> Fase 3 - Prototipação de Alta<br><b>(7)</b> Fase 4 - Avaliação<br><b>(8)</b> Fase 5 - Vídeo<br><b>(9)</b> Encerrar",
+			"new_state": "2"
+		},
+		"3": {
+			"action": "Muito obrigada por utilizar nosso chatbot! Qualquer nova dúvida basta chamar novamente! Até mais!",
+			"new_state": "start"
+		},
+		"default": {
+			"action": "Não entendi! Poderia repetir?<br><b>(1)</b> Tarefas<br><b>(2)</b> Projeto<br><b>(3)</b> Encerrar",
+			"new_state": "0"
+		}
+	},
+	"1": {
+		"1": {
+			"action": "Tarefa 1: Design centrado no usuário e design da interação<br>Início: 24/03/2022<br>Entrega: 10/04/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"2": {
+			"action": "Tarefa 2: Acessibilidade<br>Início: 07/04/2022<br>Entrega: 18/04/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"3": {
+			"action": "Tarefa 3: Personas e Jornada do Usuário<br>Início: 19/04/2022<br>Entrega: 03/05/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"4": {
+			"action": "Tarefa 4: Storyboarding<br>Início: 28/04/2022<br>Entrega: 11/05/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"5": {
+			"action": "Tarefa 5: Fatores Humanos - Percepção<br>Início: 12/05/2022<br>Entrega: 01/06/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"6": {
+			"action": "Muito obrigada por utilizar nosso chatbot! Qualquer nova dúvida basta chamar novamente! Até mais!",
+			"new_state": "start"
+		},
+		"default": {
+			"action": "Não entendi! Poderia repetir?<br><b>(1)</b> Tarefa 1: Design centrado no usuário e design da interação<br><b>(2)</b> Tarefa 2: Acessibilidade<br><b>(3)</b> Tarefa 3: Personas e Jornada do Usuário<br><b>(4)</b> Tarefa 4: Storyboarding<br><b>(5)</b> Tarefa 5: Fatores Humanos - Percepção<br><b>(6)</b> Encerrar",
+			"new_state": "1"
+		}
+	},
+	"2": {
+		"1": {
+			"action": "Proposição de Temas<br>Início: 15/03/2022<br>Entrega: 21/03/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"2": {
+			"action": "Seleção Problema - Votação<br>Início: 22/03/2022<br>Entrega: 27/03/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"3": {
+			"action": "Formação Grupos<br>Início: 29/03/2022<br>Entrega: 03/04/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"4": {
+			"action": "Fase 1 - Clarificação do Problema de Design<br>Início: 05/04/2022<br>Entrega: 30/04/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"5": {
+			"action": "Fase 2 - Prototipação de Baixa<br>Início: 01/05/2022<br>Entrega: 15/05/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"6": {
+			"action": "Fase 3 - Prototipação de Alta<br>Início: 17/05/2022<br>Entrega: 14/06/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"7": {
+			"action": "Fase 4 - Avaliação<br>Início: 09/06/2022<br>Entrega: 30/06/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"8": {
+			"action": "Fase 5 - Vídeo<br>Início: 30/06/2022<br>Entrega: 16/07/2022<br>Deseja continuar e saber mais alguma data?<br><b>(1)</b> Sim<br><b>(2)</b> Não",
+			"new_state": "end"
+		},
+		"9": {
+			"action": "Muito obrigada por utilizar nosso chatbot! Qualquer nova dúvida basta chamar novamente! Até mais!",
+			"new_state": "start"
+		},
+		"default": {
+			"action": "Não entendi! Poderia repetir?<br><b>(1)</b> Proposição de Temas<br><b>(2)</b> Seleção Problema - Votação<br><b>(3)</b> Formação Grupos<br><b>(4)</b> Fase 1 - Clarificação do Problema de Design<br><b>(5)</b> Fase 2 - Prototipação de Baixa<br><b>(6)</b> Fase 3 - Prototipação de Alta<br><b>(7)</b> Fase 4 - Avaliação<br><b>(8)</b> Fase 5 - Vídeo<br><b>(9)</b> Encerrar",
+			"new_state": "2"
+		}
+	}
+}

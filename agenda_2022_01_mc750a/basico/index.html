@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Chatbot - Agenda MC750A 2022/1</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<script src="assets/js/jquery.min.js"></script>
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/chatbot.png">
+
+	<style type="text/css">
+		#painel-user-bot {
+			border-radius:10px;
+			overflow-y:auto;
+			overflow-x:hidden;
+			background-color:#E1E5F2;
+			color:black;
+			font: 15px Consolas;
+			padding:5px;
+			position:absolute;
+			bottom:9%;
+			top:2%;
+			left:1%;
+			right:1%
+		}
+
+		#user-panel {
+			width:99%;
+			position:absolute;
+			bottom:3%;
+		}
+
+		.input-group {
+			width:100%;
+			padding-top:5px;
+			padding-bottom:0px;
+			padding-left:1%;
+			border-radius:0px;
+			box-shadow:0px 0px 0px 0 rgb(0 0 0);
+		}
+
+		#msg-user {
+			margin-left:0px;
+			height:25px;
+			width:83%;
+			font-size:14px;
+			color:black;
+			margin-top:1px;
+			font-size:12px;
+		}
+
+		.btn {
+			width:16%;
+			margin-left:1%;
+			margin-bottom:0px;
+			padding:0px;
+			height:25px;
+			margin-top:0px;
+			text-align:center;
+			font-size:12px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content" lang="pt" id="painel-user-bot">
+	</div>
+	<div id="user-panel">
+		<div class="input-group">
+			<input id="msg-user" class="form-control" type="text" placeholder="Mensagem"/>
+			<button class="btn" onclick="get_state()">Enviar</span></button>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		flow = null;
+		state = "start";
+
+		function updateScroll(){
+			var element = document.getElementById("painel-user-bot");
+			element.scrollTop = element.scrollHeight;
+		}
+
+		function get_state(){
+			message = document.getElementById("msg-user").value;
+
+			if ((state != "start")||(message != "")){
+				user_message = "<b>Você: </b>"+message+"<br><br>";
+				text = $('#painel-user-bot').html() + user_message;
+				$('#painel-user-bot').html(""+text);
+				updateScroll();
+			}
+
+			message = message.trim().replace(/ /g, "").toLowerCase();
+			document.getElementById("msg-user").value = "";
+
+			response = "";
+			try {
+				response = flow[state][message]['action'];
+				state = flow[state][message]['new_state'];
+			} catch(e) {
+				response = flow[state]['default']['action'];
+				state = flow[state]['default']['new_state'];
+			}
+
+			bot_message = "<b>Bot: </b>"+response+"<br><br>";
+			text = $('#painel-user-bot').html() + bot_message;
+			$('#painel-user-bot').html(""+text);
+			updateScroll();
+		}
+
+		function get_attendant(){
+			$.getJSON('assets/agenda_chatbot_fsm.json', function(flow_){
+				flow = flow_;
+			})
+			.done(function() {
+				get_state();
+			});
+		}
+
+		$(document).keypress(function(e){
+			if(e.which == 13){ get_state(); }
+		});
+
+		$(document).ready(function() {
+			get_attendant();
+		});
+	</script>
+</body>
+</html>

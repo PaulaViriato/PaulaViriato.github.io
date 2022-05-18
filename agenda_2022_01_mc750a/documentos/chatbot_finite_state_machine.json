@@ -1,0 +1,64 @@
+{
+	"start": {
+		"action": null,
+		"new_state": null
+	},
+	"state_a": {
+		"intent_a": {
+			"action": null,
+			"new_state": null
+		},
+		"intent_b": {
+			"action": null,
+			"new_state": null
+		},
+		"intent_...": null,
+		"intent_z": {
+			"action": null,
+			"new_state": null
+		},
+		"default": {
+			"action": null,
+			"new_state": null
+		}
+	},
+	"state_b": {
+		"intent_a": {
+			"action": null,
+			"new_state": null
+		},
+		"intent_b": {
+			"action": null,
+			"new_state": null
+		},
+		"intent_...": null,
+		"intent_z": {
+			"action": null,
+			"new_state": null
+		},
+		"default": {
+			"action": null,
+			"new_state": null
+		}
+	},
+	"state_...": null,
+	"state_z": {
+		"intent_a": {
+			"action": null,
+			"new_state": null
+		},
+		"intent_b": {
+			"action": null,
+			"new_state": null
+		},
+		"intent_...": null,
+		"intent_z": {
+			"action": null,
+			"new_state": null
+		},
+		"default": {
+			"action": null,
+			"new_state": null
+		}
+	},
+}
