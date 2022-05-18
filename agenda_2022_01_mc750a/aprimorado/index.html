@@ -112,7 +112,6 @@
 					<div class="auth-box" style="width:100%;height:100%;border-top-right-radius:0px;border-top-left-radius:0px;height:90%;overflow:auto;position:relative;">
 						<div class="content" style="height:100%;position:relative;">
 							<div class="content" lang="pt" id="painel-user-bot" style="width:97%;height:88%;border-radius:10px;background-color:#E1E5F2;margin:1%;overflow-y:auto;overflow-x:hidden;color:white;font-family:'Consolas';padding:1%;padding-bottom:6%;padding-top:0%;margin-top:2%;padding-left:5px;padding-right:5px;">
-								<div class='collapse' id='atddigitando' style="padding-left:5px;position:absolute;bottom:11%;left:2%;color:#1F7A8C;">O atendente está digitando...</div>
 							</div>
 							<div id="user-panel" style="width:98%;">
 								<div class="input-group" style="width:100%;padding-top:5px;padding-bottom:0px;padding-left:1%;border-radius:0px;box-shadow:0px 0px 0px 0 rgb(0 0 0)">
@@ -243,21 +242,11 @@
 			});
 		}
 
-		function setDigitando(){
-			text = $('#atddigitando').html();
-			if ((text.split(".").length-1) < 3){
-				$('#atddigitando').html(text+".");
-			} else {
-				$('#atddigitando').html("O atendente está digitando.");
-			}
-		}
-
 		function setNumber(number){
 			if (number < 10){ return '0'+number;
 			} else { return ''+number; }
 		}
 
-		setInterval('setDigitando()', 750);
 		$(document).keypress(function(e){
 			if(e.which == 13){ get_state(); }
 		});
